@@ -2,6 +2,9 @@
 
 This Terraform configuration sets up a streaming pipeline to ingest [Sigstore Rekor](https://www.sigstore.dev/what-is-sigstore) transparency log entries from the public PubSub topic into BigQuery for analysis.
 
+> [!WARNING]
+> **Cost Alert**: At current Rekor activity levels (~11.6M entries/day), this streaming pipeline costs approximately **$158/month**. See [cost-plan.md](cost-plan.md) for a batch loading alternative that reduces costs by 47%.
+
 ## Overview
 
 Rekor is Sigstore's transparency log for supply chain security. This pipeline:
