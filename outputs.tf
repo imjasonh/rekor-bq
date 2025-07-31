@@ -25,7 +25,7 @@ output "dead_letter_topic" {
 
 output "parsed_view_id" {
   description = "The ID of the parsed entries view"
-  value       = google_bigquery_table.entries_parsed_view.table_id
+  value       = google_bigquery_table.entries_parsed.table_id
 }
 
 output "dashboard_id" {
@@ -38,7 +38,7 @@ output "example_queries" {
   value = {
     recent_entries = <<-SQL
       SELECT * 
-      FROM `${var.project_id}.${google_bigquery_dataset.rekor_stream.dataset_id}.${google_bigquery_table.entries_parsed_view.table_id}`
+      FROM `${var.project_id}.${google_bigquery_dataset.rekor_stream.dataset_id}.${google_bigquery_table.entries_parsed.table_id}`
       WHERE publish_time > TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR)
       ORDER BY publish_time DESC
       LIMIT 100

@@ -133,14 +133,3 @@ Alerts are configured for:
 1. **No data appearing**: Check subscription permissions and verify the PubSub service account has BigQuery access
 2. **Dead letter messages**: Check CloudEvents format compatibility
 3. **High backlog**: May indicate BigQuery quota issues or schema problems
-
-## Next Steps
-
-1. Create a UDF to parse the TransparencyLogEntry protobuf
-2. Build dashboards for supply chain security monitoring
-3. Set up scheduled queries for regular analysis
-4. Archive old data to reduce storage costs
-
-## License
-
-[Your license here]
